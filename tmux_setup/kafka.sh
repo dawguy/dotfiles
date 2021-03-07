@@ -17,3 +17,4 @@ tmux send-keys Enter
 
 echo "To see the kafka windows run the below command"
 echo "tmux a -t kafka"
+echo "cd ${MY_KAFKA_HOME}"
