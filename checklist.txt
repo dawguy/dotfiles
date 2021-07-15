@@ -1,0 +1,16 @@
+ZSH
+Oh-my-zsh
+VIM
+htop
+code
+
+ultimate vimrc
+vundle
+profiles
+fzf
+ag
+
+turn off mouse acceleration (gnome-tweak)
+
+intellij (and create desktop entry)
+datagrip (and create desktop entry)
