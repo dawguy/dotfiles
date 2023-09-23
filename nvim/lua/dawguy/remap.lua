@@ -5,6 +5,9 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- Open new buffer
+vim.keymap.set("n", "<leader>v", vim.cmd.vsp)
+
 -- Basic buffer operations
 -- vim.keymap.set("n", "<leader>n", vim.cmd.bnext)
 -- vim.keymap.set("n", "<leader>p", vim.cmd.bprevious)
@@ -21,8 +24,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Paste without overwriting buffer
 vim.keymap.set("x", "<leader>p", "\"_dP")
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+-- vim.keymap.set("n", "<leader>d", "\"_d")
+-- vim.keymap.set("v", "<leader>d", "\"_d")
 
 -- Apparently Q is bad
 vim.keymap.set("n", "Q", "<nop>")
