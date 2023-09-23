@@ -23,7 +23,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Paste without overwriting buffer
-vim.keymap.set("x", "<leader>p", "\"_dP")
+-- vim.keymap.set("x", "<leader>p", "\"_dP")
 -- vim.keymap.set("n", "<leader>d", "\"_d")
 -- vim.keymap.set("v", "<leader>d", "\"_d")
 
