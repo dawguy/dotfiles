@@ -45,3 +45,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Easily make file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", {silent = true})
+
+-- Go fmt easily
+vim.keymap.set("n", "<leader>gf", "<cmd>!go fmt %<CR>", {silent = true})
