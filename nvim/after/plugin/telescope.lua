@@ -13,4 +13,4 @@ vim.keymap.set('n', '<leader>pp', function()
 end)
 
 vim.keymap.set('n', 'gr', function() builtin.lsp_references() end, { noremap = true, silent = true })
-vim.keymap.set('n', 'gi', function() builtin.lsp_implementations() end, { noremap = true, silent = true })
+vim.keymap.set('n', 'gI', function() builtin.lsp_implementations() end, { noremap = true, silent = true })
