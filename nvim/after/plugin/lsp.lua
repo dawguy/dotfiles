@@ -13,15 +13,15 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
 	vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
 	vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-	vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-	vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+	vim.keymap.set("n", "<leader>wrr", function() vim.lsp.buf.references() end, opts)
+	vim.keymap.set("n", "<leader>wrn", function() vim.lsp.buf.rename() end, opts)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 	vim.keymap.set("n", "<leader>D", function() vim.lsp.buf.type_definition() end, opts)
 end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer', 'gopls', 'golangci_lint_ls' },
+	ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer', 'gopls', 'golangci_lint_ls', 'bufls' },
 	handlers = {
 		lsp.default_setup,
 		lua_ls = function()
