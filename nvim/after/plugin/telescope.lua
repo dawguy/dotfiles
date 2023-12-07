@@ -1,3 +1,43 @@
+local telescope = require('telescope')
+local actions = require('telescope.actions')
+
+vim.cmd([[
+function!   QuickFixOpenAll()
+    if empty(getqflist())
+        return
+    endif
+    let s:prev_val = ""
+    let s:j = 0
+    for d in getqflist()
+        let s:curr_val = bufname(d.bufnr)
+        if (s:j == 0)
+            exec "edit " . s:curr_val
+        endif
+        if (s:curr_val != s:prev_val)
+            if (s:j != 0)
+                exec "vsplit " . s:curr_val
+            endif
+        endif
+        let s:prev_val = s:curr_val
+        let s:j = s:j + 1
+    endfor
+endfunction
+]])
+
+vim.keymap.set('n', '<leader>oq' , ':call QuickFixOpenAll()<CR>', { noremap=true, silent=false })
+
+telescope.setup{
+    defaults = {
+        mappings = {
+            i = {
+              ["<C-o>"] = function(prompt_bufnr) require("telescope.actions").select_default(prompt_bufnr) require("telescope.builtin").resume() end,
+              ["<C-q>"] = actions.smart_send_to_qflist,
+              ["<leader>q"] = actions.smart_send_to_qflist,
+            }
+        }
+    }
+}
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
