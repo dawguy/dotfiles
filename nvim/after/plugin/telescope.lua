@@ -34,7 +34,8 @@ telescope.setup{
               ["<C-q>"] = actions.smart_send_to_qflist,
               ["<leader>q"] = actions.smart_send_to_qflist,
             }
-        }
+        },
+        layout_strategy = 'flex'
     }
 }
 
