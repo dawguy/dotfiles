@@ -52,3 +52,12 @@ cmp.setup({
 lsp.set_preferences({
     sign_icons = {}
 })
+
+local lspconfig = require("lspconfig")
+lspconfig.gopls.setup{
+    settings = {
+        gopls = {
+            buildFlags = {"-tags=e2e,unstable"}
+        }
+    }
+}
