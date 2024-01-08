@@ -55,3 +55,6 @@ vim.keymap.set("n", "<leader>gbf", ":Git blame<CR>", {silent = true})
 -- Make quicklist easy to open and close
 vim.keymap.set("n", "<leader>co", ":copen<CR>", {silent = true})
 vim.keymap.set("n", "<leader>cc", ":cclose<CR>", {silent = true})
+
+-- mix format easily
+vim.keymap.set("n", "<leader>ef", "<cmd>!mix format<CR>",{silent = true})
