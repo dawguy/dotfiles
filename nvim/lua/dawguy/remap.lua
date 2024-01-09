@@ -34,7 +34,7 @@ vim.keymap.set("n", "Q", "<nop>")
 
 -- Format project
 vim.keymap.set("n", "<leader>f", function()
-	vim.lsp.buf.format()
+    vim.lsp.buf.format()
 end)
 
 -- Quick fix navigation
@@ -44,17 +44,17 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Easily make file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", {silent = true})
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Go fmt easily
-vim.keymap.set("n", "<leader>gf", "<cmd>!go fmt %<CR>", {silent = true})
+vim.keymap.set("n", "<leader>gf", "<cmd>!go fmt %<CR>", { silent = true })
 
 -- Alternate git blame
-vim.keymap.set("n", "<leader>gbf", ":Git blame<CR>", {silent = true})
+vim.keymap.set("n", "<leader>gbf", ":Git blame<CR>", { silent = true })
 
 -- Make quicklist easy to open and close
-vim.keymap.set("n", "<leader>co", ":copen<CR>", {silent = true})
-vim.keymap.set("n", "<leader>cc", ":cclose<CR>", {silent = true})
+vim.keymap.set("n", "<leader>co", ":copen<CR>", { silent = true })
+vim.keymap.set("n", "<leader>cc", ":cclose<CR>", { silent = true })
 
 -- mix format easily
-vim.keymap.set("n", "<leader>ef", "<cmd>!mix format<CR>",{silent = true})
+vim.keymap.set("n", "<leader>ef", "<cmd>!mix format<CR>", { silent = true })
