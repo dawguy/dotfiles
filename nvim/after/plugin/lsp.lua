@@ -22,14 +22,14 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer', 'gopls', 'golangci_lint_ls', 'bufls' },
-    handlers = {
-        lsp.default_setup,
-        lua_ls = function()
-            local lua_opts = lsp.nvim_lua_ls()
-            require('lspconfig').lua_ls.setup(lua_opts)
-        end,
-    },
+	ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer', 'gopls', 'golangci_lint_ls', 'bufls', 'tailwindcss', 'cssls' },
+	handlers = {
+		lsp.default_setup,
+		lua_ls = function()
+			local lua_opts = lsp.nvim_lua_ls()
+			require('lspconfig').lua_ls.setup(lua_opts)
+		end,
+	},
 })
 
 require('lspconfig').elixirls.setup {
