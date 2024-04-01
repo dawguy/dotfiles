@@ -31,6 +31,8 @@ return require('packer').startup(function(use)
         "neovim/nvim-lspconfig",
     }
 
+    use { "nvim-neotest/nvim-nio" }
+
     use({
         "nvim-neotest/neotest",
         requires = {
