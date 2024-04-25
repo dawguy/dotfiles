@@ -47,6 +47,9 @@ cmp.setup({
         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
         ['<C-,'] = cmp.mapping.complete(),
     }),
+    experimental = {
+        ghost_text = true,
+    },
 })
 
 lsp.set_preferences({
