@@ -38,7 +38,7 @@ telescope.setup {
                 ["<leader>q"] = actions.smart_send_to_qflist,
             }
         },
-        layout_strategy = 'flex'
+        layout_strategy = 'flex',
     }
 }
 
@@ -56,6 +56,17 @@ vim.keymap.set('n', '<leader>pg', builtin.grep_string, {})
 vim.keymap.set('n', '<leader>pp', function()
     builtin.find_files({
         default_text = vim.fn.expand('%:t')
+    })
+end)
+vim.keymap.set('n', '<leader>pt', function()
+    local file_name = vim.fn.expand('%:t')
+    if file_name:find("_test.go") == nil then
+        file_name = file_name:gsub(".go", "_test.go")
+    else
+        file_name = file_name:gsub("_test.go", ".go")
+    end
+    builtin.find_files({
+        default_text = file_name
     })
 end)
 
