@@ -47,7 +47,14 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Go fmt easily
-vim.keymap.set("n", "<leader>gf", "<cmd>!go fmt %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>gf", "<cmd>!goimports -w %<CR>", {silent = true})
+
+-- Go if err != nil { return err } :joy-cat:
+vim.keymap.set("n", "<leader>ge", "oif err != nil {<CR>return nil, rerr.Trace(err)<CR>}<esc>")
+vim.keymap.set("i", "<leader>ge", "<esc>oif err != nil {<CR>return nil, rerr.Trace(err)<CR>}<CR>")
+
+-- Faster cfg.ts.GetAppCtx()
+vim.keymap.set("i", "<leader>ga", "cfg.ts.GetAppCtx()")
 
 -- Alternate git blame
 vim.keymap.set("n", "<leader>gbf", ":Git blame<CR>", { silent = true })
