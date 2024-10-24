@@ -31,19 +31,6 @@ return require('packer').startup(function(use)
         "neovim/nvim-lspconfig",
     }
 
-    use { "zbirenbaum/copilot.lua" }
---    use {
---       "zbirenbaum/copilot.lua",
---       cmd = "Copilot",
---       event = "InsertEnter",
---       config = function()
---           require("copilot").setup({
---                suggestion = { enabled = false },
---                panel = { enabled = false },
---           })
---       end,
---    }
-
     use { "nvim-neotest/nvim-nio" }
 
     use({

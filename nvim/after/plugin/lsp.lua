@@ -22,7 +22,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer', 'gopls', 'golangci_lint_ls', 'bufls', 'tailwindcss', 'cssls' },
+	ensure_installed = { 'ts_ls', 'eslint', 'lua_ls', 'rust_analyzer', 'gopls', 'golangci_lint_ls', 'bufls', 'tailwindcss', 'cssls', 'cucumber_language_server' },
 	handlers = {
 		lsp.default_setup,
 		lua_ls = function()
@@ -36,6 +36,18 @@ require('lspconfig').elixirls.setup {
     cmd = { "/Users/david/.elixir-ls/release/language_server.sh" },
     on_attach = on_attach
 }
+
+require('lspconfig').cucumber_language_server.setup({
+    settings = {
+        features = {
+            "**/e2e_tests/**/*.feature",
+        },
+        glue = {
+            "**/e2e_tests/**/*.go",
+            "**/e2e_tests/**/*_test.go",
+        },
+    }
+})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -68,7 +80,7 @@ local lspconfig = require("lspconfig")
 lspconfig.gopls.setup{
     settings = {
         gopls = {
-            buildFlags = {"-tags=e2e,unstable"}
+            buildFlags = {"-tags=e2e,unstable,cucumber"}
         }
     }
 }

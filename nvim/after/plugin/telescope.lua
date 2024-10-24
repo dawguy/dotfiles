@@ -59,7 +59,7 @@ vim.keymap.set('n', '<leader>pp', function()
     })
 end)
 vim.keymap.set('n', '<leader>pt', function()
-    local file_name = vim.fn.expand('%:t')
+    local file_name = vim.fn.expand('%')
     if file_name:find("_test.go") == nil then
         file_name = file_name:gsub(".go", "_test.go")
     else
