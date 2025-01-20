@@ -34,6 +34,7 @@ require('mason-lspconfig').setup({
 
 require('lspconfig').elixirls.setup {
     cmd = { "/Users/david/.elixir-ls/release/language_server.sh" },
+    filetypes = {"ex", "exs", "hex"},
     on_attach = on_attach
 }
 
