@@ -12,12 +12,14 @@ neotest.setup({
 })
 
 local function get_nearest_function_name()
-  local ts_utils = require("nvim-treesitter.ts_utils")
-  local node = ts_utils.get_node_at_cursor()
+  local node = vim.treesitter.get_node()
 
   while node do
     if node:type() == "function_declaration" then
-      return ts_utils.get_node_text(node:child(1))[1]
+      local name_node = node:child(1)
+      if name_node then
+        return vim.treesitter.get_node_text(name_node, 0)
+      end
     end
     node = node:parent()
   end

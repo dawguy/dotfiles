@@ -70,5 +70,5 @@ vim.keymap.set('n', '<leader>pt', function()
     })
 end)
 
-vim.keymap.set('n', 'gr', function() builtin.lsp_references({fname_width = 50}) end, { noremap = true, silent = true })
-vim.keymap.set('n', 'gI', function() builtin.lsp_implementations({fname_width = 50}) end, { noremap = true, silent = true })
+vim.keymap.set('n', 'gr', function() builtin.lsp_references({fname_width = 50, jump_type = 'never'}) end, { noremap = true, silent = true })
+vim.keymap.set('n', 'gI', function() builtin.lsp_implementations({fname_width = 50, jump_type = 'never'}) end, { noremap = true, silent = true })
