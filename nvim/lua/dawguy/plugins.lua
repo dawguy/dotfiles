@@ -26,6 +26,7 @@ vim.pack.add({
   gh('nvim-telescope/telescope.nvim'),
   gh('nvim-lua/plenary.nvim'),
   gh('rose-pine/neovim'),
+  gh('Olical/conjure'),
 
   -- Treesitter (main branch: the current rewrite, requires Nvim 0.12)
   { src = gh('nvim-treesitter/nvim-treesitter'), version = 'main' },

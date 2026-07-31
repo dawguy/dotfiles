@@ -64,6 +64,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
+    'clojure_lsp',
     'eslint', 'lua_ls', 'rust_analyzer', 'gopls', 'golangci_lint_ls',
     'tailwindcss', 'cssls', 'cucumber_language_server',
   },
